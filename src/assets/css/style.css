@@ -15,6 +15,11 @@ body {
   overflow: hidden;
 }
 
+input,
+select {
+  font-family: inherit;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -59,6 +64,7 @@ a:active {
 }
 
 .btn {
+  font-family: inherit;
   border-radius: 4px;
   background-color: #2546bc;
   padding: 18px 48px 21px 48px;
@@ -181,10 +187,15 @@ a:active {
 
 .sidecontrol__controls a svg {
   display: block;
-  width: 20px;
-  height: 24px;
+  width: 28px;
+  height: 32px;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
+  animation: flipInX 1.8s infinite;
+}
+
+.sidecontrol__controls a svg path {
+  opacity: 0.4;
 }
 
 .sidecontrol__controls-count {
@@ -694,7 +705,7 @@ a:active {
   padding: 23px 55px 21px 25px;
   font-weight: 400;
   line-height: 20px;
-  font-size: 16px;
+  font-size: 13px;
   letter-spacing: -0.28px;
 }
 
@@ -1129,7 +1140,7 @@ a:active {
 .join__evolution .form__block .policy {
   font-weight: 400;
   line-height: 18px;
-  font-size: 16px;
+  font-size: 13px;
   color: #fff;
   mix-blend-mode: normal;
   opacity: 0.89;
@@ -1155,7 +1166,7 @@ a:active {
   border: none;
   margin-top: 11px;
   padding: 22px 24px 23px 24px;
-  color: #fff;
+  color: #404040;
   font-size: 16px;
   font-weight: 900;
   line-height: 20px;
