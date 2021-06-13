@@ -1,0 +1,32 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# build folders
+/dist
+/public
+
+# map files
+*.map
+
+# testing
+/coverage
+
+# editor files
+.idea
+*.sublime*
+.vscode
+
+# misc
+.DS_Store
+Thumbs.db
+*.ini
+
+# logs
+*.log*
+
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
