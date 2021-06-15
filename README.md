@@ -6,3 +6,4 @@
 
 - Slider
 - Animations
+- Show Modal by slide number
