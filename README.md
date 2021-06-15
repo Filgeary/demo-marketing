@@ -7,3 +7,4 @@
 - Slider
 - Animations
 - Show Modal by slide number
+- Video Player by YouTube IFrame API
