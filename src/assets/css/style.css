@@ -67,7 +67,7 @@ a:active {
   font-family: inherit;
   border-radius: 4px;
   background-color: #2546bc;
-  padding: 18px 48px 21px 48px;
+  padding: 16px 40px;
   font-weight: 900;
   font-size: 16px;
   border: none;
@@ -702,7 +702,7 @@ a:active {
 
 .difference__info-cards .officer__card-item .card__descr {
   width: 243px;
-  padding: 23px 55px 21px 25px;
+  padding: 23px 50px 21px 25px;
   font-weight: 400;
   line-height: 20px;
   font-size: 13px;
@@ -774,7 +774,7 @@ a:active {
 .modules__info .btn {
   margin-top: 30px;
   color: #fff;
-  padding: 18px 48px 21px 48px;
+/*   padding: 18px 48px 21px 48px; */
 }
 
 .modules__info-btns {
@@ -842,24 +842,26 @@ a:active {
 
 .modules__info .hanson {
   position: absolute;
+  z-index: 10;
   bottom: 0;
+  display: none;
   width: 455px;
-  height: 164px;
   background: url(../img/hanson.png) center center no-repeat;
-  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
-  padding: 26px 84px 30px 181px;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.03);
+  padding: 0px 44px 30px 181px;
 }
 
 .modules__info .hanson__title {
+  margin-top: 20px;
   font-weight: 900;
   line-height: normal;
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: -0.48px;
 }
 
 .modules__info .hanson__teacher {
   line-height: normal;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 1.365px;
   text-transform: uppercase;
   color: #2546bc;
@@ -869,7 +871,7 @@ a:active {
 .modules__info .hanson__descr {
   font-weight: 400;
   line-height: 20px;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: -0.28px;
   color: #000;
   mix-blend-mode: normal;

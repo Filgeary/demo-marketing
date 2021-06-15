@@ -4,12 +4,14 @@ export default class Slider {
    * @param {string} wrapper Wrapper selector
    * @param {string} control Control selector
    * @param {string} controlToHome Control to Home selector
+   * @param {string} modal Modal selector
    */
-  constructor(wrapper, control, controlToHome) {
+  constructor(wrapper, control, controlToHome, modal) {
     this._sliderWrapper = document.querySelector(wrapper)
     this._sliderItems = [...this._sliderWrapper.children]
     this._controlList = document.querySelectorAll(control)
     this._controlToHomeList = document.querySelectorAll(controlToHome)
+    this._modal = document.querySelector(modal)
     this._slideIndex = 0
   }
 
@@ -41,6 +43,30 @@ export default class Slider {
       'animate__fadeIn',
       'animate__fast',
     )
+
+    if (this._modal) {
+      this._showModalBySlide()
+    }
+  }
+
+  _showModalBySlide() {
+    if (this._slideIndex === 2) {
+      setTimeout(() => {
+        this._modal.style.display = 'block'
+        this._modal.classList.add(
+          'animate__animated',
+          'animate__fadeInUp',
+          'animate__fast',
+        )
+      }, 3000)
+    } else {
+      this._modal.style.display = 'none'
+      this._modal.classList.remove(
+        'animate__animated',
+        'animate__fadeInUp',
+        'animate__fast',
+      )
+    }
   }
 
   init() {
