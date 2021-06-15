@@ -67,7 +67,7 @@ a:active {
   font-family: inherit;
   border-radius: 4px;
   background-color: #2546bc;
-  padding: 18px 48px 21px 48px;
+  padding: 16px 40px;
   font-weight: 900;
   font-size: 16px;
   border: none;
@@ -702,7 +702,7 @@ a:active {
 
 .difference__info-cards .officer__card-item .card__descr {
   width: 243px;
-  padding: 23px 55px 21px 25px;
+  padding: 23px 50px 21px 25px;
   font-weight: 400;
   line-height: 20px;
   font-size: 13px;
