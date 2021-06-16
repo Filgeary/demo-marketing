@@ -6,8 +6,8 @@ const webpack = require('webpack-stream')
 const browsersync = require('browser-sync').create()
 
 const PATH_SRC = {
-  html: './src/index.html',
-  js: './src/js/main.js',
+  allHTML: './src/*.html',
+  entryJS: './src/js/main.js',
   allJS: './src/js/**/*.js',
   assets: './src/assets/**/*.*',
   favicons: './src/assets/favicons/**/*.*',
@@ -16,14 +16,14 @@ const PATH_PUBLIC = './public'
 
 gulp.task('copy-html', () => {
   return gulp
-    .src(PATH_SRC.html)
+    .src(PATH_SRC.allHTML)
     .pipe(gulp.dest(PATH_PUBLIC))
     .pipe(browsersync.stream())
 })
 
 gulp.task('build-js', () => {
   return gulp
-    .src(PATH_SRC.js)
+    .src(PATH_SRC.entryJS)
     .pipe(
       webpack({
         mode: 'development',
@@ -57,7 +57,7 @@ gulp.task('cleanJunkFiles', () => {
 
 gulp.task('build-prod-js', () => {
   return gulp
-    .src(PATH_SRC.js)
+    .src(PATH_SRC.entryJS)
     .pipe(
       webpack({
         mode: 'production',
@@ -114,7 +114,7 @@ gulp.task('watch', () => {
     ui: false,
   })
 
-  gulp.watch(PATH_SRC.html, gulp.parallel('copy-html'))
+  gulp.watch(PATH_SRC.allHTML, gulp.parallel('copy-html'))
   gulp.watch(PATH_SRC.assets, gulp.parallel('copy-assets', reload))
   gulp.watch(PATH_SRC.favicons, gulp.parallel('copy-favicons', reload))
   gulp.watch(PATH_SRC.allJS, gulp.parallel('build-js', reload))

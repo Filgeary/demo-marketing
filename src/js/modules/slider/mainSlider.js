@@ -1,18 +1,18 @@
-export default class Slider {
+import AbstractSlider from './abstractSlider'
+
+export default class MainSlider extends AbstractSlider {
   /**
-   * Create Slider
+   * Create Main Slider
    * @param {string} wrapper Wrapper selector
-   * @param {string} control Control selector
+   * @param {string} controlNext Control selector
    * @param {string} controlToHome Control to Home selector
-   * @param {string} modal Modal selector
+   * @param {string} modal Modal selector that need to show by slide number
    */
-  constructor(wrapper, control, controlToHome, modal) {
-    this._sliderWrapper = document.querySelector(wrapper)
-    this._sliderItems = [...this._sliderWrapper.children]
-    this._controlList = document.querySelectorAll(control)
+  constructor(wrapper, controlNext, controlToHome, modal) {
+    super(wrapper, controlNext)
+
     this._controlToHomeList = document.querySelectorAll(controlToHome)
     this._modal = document.querySelector(modal)
-    this._slideIndex = 0
   }
 
   _removeSlides() {
@@ -26,18 +26,9 @@ export default class Slider {
     })
   }
 
-  _showSlide(index = 0) {
-    this._removeSlides()
+  _showSlide() {
+    super._showSlide()
 
-    if (this._slideIndex >= this._sliderItems.length - 1) {
-      this._slideIndex = 0
-    } else if (this._slideIndex < 0) {
-      this._slideIndex = this._sliderItems.length
-    } else {
-      this._slideIndex += index
-    }
-
-    this._sliderItems[this._slideIndex].style.display = 'block'
     this._sliderItems[this._slideIndex].classList.add(
       'animate__animated',
       'animate__fadeIn',
@@ -70,20 +61,14 @@ export default class Slider {
   }
 
   init() {
-    this._controlList.forEach((item) => {
-      item.addEventListener('click', (evt) => {
-        evt.preventDefault()
-
-        this._showSlide(1)
-      })
-    })
+    super.init()
 
     this._controlToHomeList.forEach((item) => {
       item.addEventListener('click', (evt) => {
         evt.preventDefault()
 
         this._slideIndex = 0
-        this._showSlide(0)
+        this._showSlide()
       })
     })
   }
