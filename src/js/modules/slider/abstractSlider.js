@@ -41,7 +41,6 @@ export default class AbstractSlider {
 
         this._slideIndex++
         this._showSlide()
-        console.log(this._slideIndex)
       })
     })
   }
