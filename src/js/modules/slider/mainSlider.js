@@ -8,8 +8,8 @@ export default class MainSlider extends AbstractSlider {
    * @param {string} controlToHome Control to Home selector
    * @param {string} modal Modal selector that need to show by slide number
    */
-  constructor(wrapper, controlNext, controlToHome, modal) {
-    super(wrapper, controlNext)
+  constructor({ wrapper, controlNext, controlToHome, modal }) {
+    super({ wrapper, controlNext })
 
     this._controlToHomeList = document.querySelectorAll(controlToHome)
     this._modal = document.querySelector(modal)
