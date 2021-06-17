@@ -47,7 +47,7 @@ a:active {
 
 .title {
   font-weight: 900;
-  font-size: 58px;
+  font-size: 50px;
   letter-spacing: -1.16px;
 }
 
@@ -423,7 +423,7 @@ a:active {
 
 .showup__content-title {
   color: #fff;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 38px;
   font-weight: 900;
   letter-spacing: -0.56px;
@@ -512,15 +512,23 @@ a:active {
   opacity: 0;
   transition: 0.5s all;
 }
+.showup__content-slider .card-active .card__controls-arrow {
+  opacity: 1;
+  transition: 0.5s all;
+}
 
 .showup__content-slider .card__title {
   font-weight: 900;
   line-height: normal;
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: -0.48px;
   color: #fff;
   margin-top: 12px;
   opacity: 0.4;
+  transition: 0.5s all;
+}
+.showup__content-slider .card-active .card__title {
+  opacity: 1;
   transition: 0.5s all;
 }
 
@@ -532,6 +540,10 @@ a:active {
   margin-top: 16px;
   color: #fff;
   opacity: 0;
+  transition: 0.5s all;
+}
+.showup__content-slider .card-active .card__description {
+  opacity: 1;
   transition: 0.5s all;
 }
 
@@ -774,7 +786,7 @@ a:active {
 .modules__info .btn {
   margin-top: 30px;
   color: #fff;
-/*   padding: 18px 48px 21px 48px; */
+  /*   padding: 18px 48px 21px 48px; */
 }
 
 .modules__info-btns {
@@ -1433,6 +1445,7 @@ a:active {
   background-color: #fff;
   padding: 32px 40px 50px 40px;
   transition: 0.5s all;
+  box-shadow: -10px -10px 20px hsla(0, 0%, 50%, 0.1);
 }
 
 .feed__item-active hr {
