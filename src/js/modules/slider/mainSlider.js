@@ -3,13 +3,15 @@ import AbstractSlider from './abstractSlider'
 export default class MainSlider extends AbstractSlider {
   /**
    * Create Main Slider
-   * @param {string} wrapper Wrapper selector
-   * @param {string} controlNext Control selector
-   * @param {string} controlToHome Control to Home selector
-   * @param {string} modal Modal selector that need to show by slide number
+   *
+   * @param {Object} obj Object with params for constructor
+   * @param {string} obj.wrapper Wrapper selector
+   * @param {string} obj.controlNext Control selector
+   * @param {string} obj.controlToHome Control to Home selector
+   * @param {string} obj.modal Modal selector that need to show by slide number
    */
-  constructor(wrapper, controlNext, controlToHome, modal) {
-    super(wrapper, controlNext)
+  constructor({ wrapper, controlNext, controlToHome, modal }) {
+    super({ wrapper, controlNext })
 
     this._controlToHomeList = document.querySelectorAll(controlToHome)
     this._modal = document.querySelector(modal)

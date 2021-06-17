@@ -1,10 +1,12 @@
 export default class AbstractSlider {
   /**
    * Create Abstract Slider
-   * @param {string} wrapper Wrapper selector
-   * @param {string} controlNext Control selector
+   *
+   * @param {Object} obj Object with params for constructor
+   * @param {string} obj.wrapper Wrapper selector
+   * @param {string} obj.controlNext Control selector
    */
-  constructor(wrapper, controlNext) {
+  constructor({ wrapper, controlNext }) {
     if (new.target === AbstractSlider) {
       throw new Error("Can't instantiate Abstract, only concrete one.")
     }
