@@ -4,6 +4,7 @@
 import MainSlider from './modules/slider/mainSlider'
 import MiniSlider from './modules/slider/miniSlider'
 import VideoPlayer from './modules/videoPlayer'
+import DropdownMenu from './modules/dropdownMenu'
 
 window.addEventListener('DOMContentLoaded', () => {
   const mainSlider = new MainSlider({
@@ -41,4 +42,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const videoPlayer = new VideoPlayer('.overlay', '#frame', '.close', '.play')
   videoPlayer.init()
+
+  const officeroldDropdownMenu = new DropdownMenu(
+    '.officerold',
+    '.officer__card-item',
+    '.plus',
+  )
+  officeroldDropdownMenu.init()
+
+  const officernewDropdownMenu = new DropdownMenu(
+    '.officernew',
+    '.officer__card-item',
+    '.plus',
+  )
+  officernewDropdownMenu.init()
 })
