@@ -1174,14 +1174,14 @@ a:active {
 
 .join__evolution .form__block div select {
   width: 265px;
-  height: 64px;
+  /*   height: 64px; */
   background: rgba(216, 216, 216, 0.3);
   border-radius: 4px;
   border: none;
   margin-top: 11px;
   padding: 22px 24px 23px 24px;
   color: #404040;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 900;
   line-height: 20px;
   letter-spacing: -0.28px;
@@ -1190,14 +1190,14 @@ a:active {
 
 .join__evolution .form__block div input {
   width: 340px;
-  height: 64px;
+  /*   height: 64px; */
   background: rgba(216, 216, 216, 0.3);
   border-radius: 4px;
   border: none;
   margin-top: 11px;
-  padding: 22px 24px 23px 24px;
+  padding: 20px 24px;
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: -0.28px;
@@ -1231,18 +1231,18 @@ a:active {
 .join__evolution .form__block div .icon {
   position: absolute;
   right: 24px;
-  top: 55%;
+  top: 60%;
 }
 
 .join__evolution .form__block div .icon-double {
   position: absolute;
-  right: 45px;
-  top: 53%;
+  right: 50px;
+  top: 58%;
 }
 
 .join__evolution .form__block div .icon-down {
   right: 24px;
-  top: 62%;
+  top: 66%;
 }
 
 .feed {
@@ -1664,35 +1664,35 @@ a:active {
 
 .schedule__form .form__item input {
   width: 340px;
-  height: 64px;
+  /*   height: 64px; */
   background: rgba(216, 216, 216, 0.3);
   border-radius: 4px;
   border: none;
   margin-top: 11px;
-  padding: 22px 24px 23px 24px;
+  padding: 22px 24px;
   color: #000;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: -0.28px;
 }
 
 .schedule__form .form__item input::-webkit-input-placeholder {
-  color: #000;
+  color: #444;
 }
 
 .schedule__form .form__item input::-ms-input-placeholder {
-  color: #000;
+  color: #444;
 }
 
 .schedule__form .form__item input::placeholder {
-  color: #000;
+  color: #444;
 }
 
 .schedule__form .form__item .icon {
   position: absolute;
   right: 24px;
-  top: 55%;
+  top: 60%;
 }
 
 .schedule__form .form__item .icon-double {
@@ -2091,4 +2091,14 @@ a:active {
   top: auto;
   -webkit-transform: none;
   transform: none;
+}
+
+/* custom */
+input[type='date'] {
+  padding-right: 20px !important;
+}
+input[type='date']::-webkit-calendar-picker-indicator {
+  width: 24px;
+  height: 24px;
+  opacity: 0.3;
 }
