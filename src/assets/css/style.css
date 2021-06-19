@@ -1948,15 +1948,15 @@ a:active {
 .module__info-book .download {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 15px 18px 17px 18px;
+  padding: 15px 18px;
   display: flex;
   justify-content: center;
-  height: 48px;
+  height: 60px;
 }
 
 .module__info-book .download svg {
-  -webkit-transform: translateY(2px);
-  transform: translateY(2px);
+  -webkit-transform: translateY(8px);
+  transform: translateY(8px);
 }
 
 .module__info-book .download__text {
@@ -2126,4 +2126,12 @@ input[type='date']::-webkit-calendar-picker-indicator {
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
+}
+.btn__next-page {
+  background-color: #fff;
+  border: 2px solid tomato;
+}
+.btn__next-page:hover {
+  color: #fff;
+  background-color: tomato;
 }
