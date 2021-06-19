@@ -20,12 +20,16 @@ export default class MiniSlider extends AbstractSlider {
   }) {
     super({ wrapper, controlNext })
 
-    this._sliderItems = this._sliderItems.filter((item) => {
-      return item.tagName !== 'BUTTON'
-    })
-    this._controlPrevList = document.querySelectorAll(controlPrev)
-    this._activeClass = activeClass.replace(/^\./, '')
-    this._isAutoplay = isAutoplay
+    try {
+      this._sliderItems = this._sliderItems.filter((item) => {
+        return item.tagName !== 'BUTTON'
+      })
+      this._controlPrevList = document.querySelectorAll(controlPrev)
+      this._activeClass = activeClass.replace(/^\./, '')
+      this._isAutoplay = isAutoplay
+    } catch (err) {
+      console.warn("Can't implement MiniSlider on this page")
+    }
   }
 
   _showSlide(next) {
@@ -88,18 +92,22 @@ export default class MiniSlider extends AbstractSlider {
   }
 
   init() {
-    this._sliderWrapper.style.cssText = `
+    try {
+      this._sliderWrapper.style.cssText = `
       display: flex;
       flex-wrap: wrap;
       overflow: hidden;
       align-items: flex-start;
     `
-    this._setOnClickShowSlide()
+      this._setOnClickShowSlide()
 
-    if (this._isAutoplay) {
-      setInterval(() => {
-        this._showSlide(true)
-      }, 5000)
+      if (this._isAutoplay) {
+        setInterval(() => {
+          this._showSlide(true)
+        }, 5000)
+      }
+    } catch (err) {
+      console.warn("Can't implement MiniSlider on this page")
     }
   }
 }

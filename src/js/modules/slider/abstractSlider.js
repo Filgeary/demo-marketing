@@ -11,9 +11,13 @@ export default class AbstractSlider {
       throw new Error("Can't instantiate Abstract, only concrete one.")
     }
 
-    this._sliderWrapper = document.querySelector(wrapper)
-    this._sliderItems = [...this._sliderWrapper.children]
-    this._controlNextList = document.querySelectorAll(controlNext)
+    try {
+      this._sliderWrapper = document.querySelector(wrapper)
+      this._sliderItems = [...this._sliderWrapper.children]
+      this._controlNextList = document.querySelectorAll(controlNext)
+    } catch (err) {
+      console.warn("Can't implement AbstractSlider on this page")
+    }
     this._slideIndex = 0
   }
 
@@ -37,13 +41,17 @@ export default class AbstractSlider {
   }
 
   init() {
-    this._controlNextList.forEach((item) => {
-      item.addEventListener('click', (evt) => {
-        evt.preventDefault()
+    try {
+      this._controlNextList.forEach((item) => {
+        item.addEventListener('click', (evt) => {
+          evt.preventDefault()
 
-        this._slideIndex++
-        this._showSlide()
+          this._slideIndex++
+          this._showSlide()
+        })
       })
-    })
+    } catch (err) {
+      console.warn("Can't implement AbstractSlider on this page")
+    }
   }
 }

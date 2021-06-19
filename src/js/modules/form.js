@@ -9,10 +9,15 @@ export default class Form {
    * @param {string} modalContent Content selector that need to add Message
    */
   constructor(form, endPoint, modal, modalContent) {
-    this._formsList = document.querySelectorAll(form)
-    this._endPoint = endPoint
-    this._modal = document.querySelector(modal)
-    this._modalContent = this._modal.querySelector(modalContent)
+    try {
+      this._formsList = document.querySelectorAll(form)
+      this._endPoint = endPoint
+      this._modal = document.querySelector(modal)
+      this._modalContent = this._modal.querySelector(modalContent)
+    } catch (err) {
+      console.warn("Can't implement Form on this page")
+    }
+
     this._message = {
       loading: 'Pending order...',
       success: 'Thank You for your order!',
