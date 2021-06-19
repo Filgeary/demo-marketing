@@ -11,3 +11,4 @@
 - AbstractSlider class
 - Mini sliders
 - Dropdown Menu
+- Post data via Form & check 'tel' inputs on mask
