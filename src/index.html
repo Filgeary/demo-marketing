@@ -1177,7 +1177,12 @@
               <div class="form__block">
                 <div>
                   <label for="name">My name is</label>
-                  <input name="name" type="text" placeholder="Your name" />
+                  <input
+                    name="name"
+                    type="text"
+                    placeholder="Your name"
+                    required
+                  />
                   <svg
                     class="icon"
                     width="18"
@@ -1312,7 +1317,12 @@
               <div class="form__block">
                 <div>
                   <label for="name">Hit me up here</label>
-                  <input name="email" type="email" placeholder="Email" />
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    required
+                  />
                   <svg
                     class="icon"
                     width="22"
@@ -1346,9 +1356,10 @@
                   <label for="name">And here</label>
                   <input
                     name="phone"
-                    type="text"
+                    type="tel"
                     id="phone"
                     placeholder="+1 (___) ___-____"
+                    required
                   />
                   <svg
                     class="icon"
@@ -1945,7 +1956,12 @@
             <form class="form">
               <div class="form__item">
                 <label for="name">My name is</label>
-                <input name="name" type="text" placeholder="Your name" />
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  required
+                />
                 <svg
                   class="icon"
                   width="18"
@@ -1977,7 +1993,12 @@
 
               <div class="form__item">
                 <label for="name">You can contact me here</label>
-                <input name="email" type="email" placeholder="Your email" />
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Your email"
+                  required
+                />
                 <svg
                   class="icon"
                   width="22"
@@ -2011,6 +2032,7 @@
                 <label for="name">I want to meet you on</label>
                 <input name="date" type="date" placeholder="When?" />
                 <svg
+                  style="display: none"
                   class="icon"
                   width="20"
                   height="22"
@@ -2065,6 +2087,17 @@
       <div class="video">
         <div id="frame"></div>
         <div class="close">&times;</div>
+      </div>
+    </div>
+
+    <div class="js-modal">
+      <div
+        class="
+          js-modal__content
+          animate__animated animate__fadeInDown animate__fast
+        "
+      >
+        Modal / Modal / Modal / Modal
       </div>
     </div>
 

@@ -1,12 +1,27 @@
 'use strict'
 
+// utils
+import { checkInputTel } from './utils/checkInputTel'
+
 // modules
 import MainSlider from './modules/slider/mainSlider'
 import MiniSlider from './modules/slider/miniSlider'
 import VideoPlayer from './modules/videoPlayer'
 import DropdownMenu from './modules/dropdownMenu'
+import Form from './modules/form'
 
 window.addEventListener('DOMContentLoaded', () => {
+  // endpoints
+  const END_POINT = {
+    getJSON: 'assets/db.json',
+    postJSON: 'https://jsonplaceholder.typicode.com/posts',
+    postText: 'https://echo.htmlacademy.ru',
+  }
+
+  // utils
+  checkInputTel('form [type="tel"]')
+
+  // modules
   const mainSlider = new MainSlider({
     wrapper: '.page',
     controlNext: '.next',
@@ -56,4 +71,12 @@ window.addEventListener('DOMContentLoaded', () => {
     '.plus',
   )
   officernewDropdownMenu.init()
+
+  const form = new Form(
+    'form',
+    END_POINT.postText,
+    '.js-modal',
+    '.js-modal__content',
+  )
+  form.init()
 })
