@@ -15,7 +15,7 @@ export default class MiniSlider extends AbstractSlider {
     wrapper,
     controlNext,
     controlPrev,
-    activeClass,
+    activeClass = '',
     isAutoplay = false,
   }) {
     super({ wrapper, controlNext })
@@ -25,7 +25,7 @@ export default class MiniSlider extends AbstractSlider {
         return item.tagName !== 'BUTTON'
       })
       this._controlPrevList = document.querySelectorAll(controlPrev)
-      this._activeClass = activeClass.replace(/^\./, '')
+      this._activeClass = activeClass ? activeClass.replace(/^\./, '') : ''
       this._isAutoplay = isAutoplay
     }
   }
@@ -33,12 +33,17 @@ export default class MiniSlider extends AbstractSlider {
   _showSlide(next) {
     this._sliderItems.forEach((item) => {
       item.classList.remove(
-        this._activeClass,
         'animate__animated',
         'animate__fadeIn',
         'animate__fast',
       )
     })
+
+    if (this._activeClass) {
+      this._sliderItems.forEach((item) => {
+        item.classList.remove(this._activeClass)
+      })
+    }
 
     if (next) {
       this._sliderWrapper.appendChild(this._sliderItems[this._slideIndex])
@@ -65,11 +70,14 @@ export default class MiniSlider extends AbstractSlider {
     }
 
     this._sliderItems[this._slideIndex].classList.add(
-      this._activeClass,
       'animate__animated',
       'animate__fadeIn',
       'animate__fast',
     )
+
+    if (this._activeClass) {
+      this._sliderItems[this._slideIndex].classList.add(this._activeClass)
+    }
   }
 
   _setOnClickShowSlide() {
