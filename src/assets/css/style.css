@@ -191,7 +191,7 @@ a:active {
   height: 32px;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
-  animation: flipInX 1.8s infinite;
+  animation: flipInX 2s infinite;
 }
 
 .sidecontrol__controls a svg path {
@@ -1741,7 +1741,7 @@ a:active {
   height: 100%;
   margin-left: 84px;
   padding-left: 66px;
-  padding-top: 64px;
+  padding-top: 110px;
   background: #2546bc;
 }
 
@@ -1981,8 +1981,8 @@ a:active {
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 24px 32px;
+  align-items: baseline;
+  padding: 24px 28px;
 }
 
 .module__info-controls .next__counter,
@@ -2134,4 +2134,22 @@ input[type='date']::-webkit-calendar-picker-indicator {
 .btn__next-page:hover {
   color: #fff;
   background-color: tomato;
+}
+.prevmodule svg {
+  display: block;
+  width: 20px;
+  height: 16px;
+  animation: flipInX 2s infinite;
+}
+.prevmodule svg path {
+  fill: hsl(0, 0%, 65%);
+}
+.nextmodule svg {
+  display: block;
+  width: 20px;
+  height: 16px;
+  animation: flipInX 2s infinite;
+}
+.nextmodule svg path {
+  fill: hsl(0, 0%, 65%);
 }
