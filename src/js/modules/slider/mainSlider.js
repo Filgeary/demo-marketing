@@ -66,7 +66,7 @@ export default class MainSlider extends AbstractSlider {
   }
 
   init() {
-    if (this._controlToHomeList.length > 0) {
+    if (this._sliderWrapper && this._controlToHomeList.length > 0) {
       super.init()
 
       this._controlToHomeList.forEach((item) => {

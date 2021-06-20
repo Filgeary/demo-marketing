@@ -6,6 +6,7 @@ import { checkInputTel } from './utils/checkInputTel'
 // modules
 import MainSlider from './modules/slider/mainSlider'
 import MiniSlider from './modules/slider/miniSlider'
+import PageModulesMiniSlider from './modules/slider/pageModulesMiniSlider'
 import VideoPlayer from './modules/videoPlayer'
 import DropdownMenu from './modules/dropdownMenu'
 import Form from './modules/form'
@@ -20,6 +21,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // utils
   checkInputTel('form [type="tel"]')
+
+  // Page index.html
+  // ==========================================================================
 
   // modules
   const mainSlider = new MainSlider({
@@ -79,4 +83,15 @@ window.addEventListener('DOMContentLoaded', () => {
     '.js-modal__content',
   )
   form.init()
+
+  // Page modules.html
+  // ==========================================================================
+
+  // modules
+  const pageModulesMiniSlider = new PageModulesMiniSlider({
+    wrapper: '.moduleapp',
+    controlNext: '.nextmodule',
+    controlPrev: '.prevmodule',
+  })
+  pageModulesMiniSlider.init()
 })

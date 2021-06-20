@@ -33,7 +33,7 @@ export default class AbstractSlider {
       this._slideIndex = 0
     }
     if (this._slideIndex < 0) {
-      this._slideIndex = this._sliderItems.length
+      this._slideIndex = this._sliderItems.length - 1
     }
 
     this._sliderItems[this._slideIndex].style.display = 'block'
