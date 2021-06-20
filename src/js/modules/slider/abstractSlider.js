@@ -11,14 +11,13 @@ export default class AbstractSlider {
       throw new Error("Can't instantiate Abstract, only concrete one.")
     }
 
-    try {
-      this._sliderWrapper = document.querySelector(wrapper)
+    this._sliderWrapper = document.querySelector(wrapper)
+
+    if (this._sliderWrapper) {
       this._sliderItems = [...this._sliderWrapper.children]
       this._controlNextList = document.querySelectorAll(controlNext)
-    } catch (err) {
-      console.warn("Can't implement AbstractSlider on this page")
+      this._slideIndex = 0
     }
-    this._slideIndex = 0
   }
 
   _removeSlides() {
@@ -34,14 +33,14 @@ export default class AbstractSlider {
       this._slideIndex = 0
     }
     if (this._slideIndex < 0) {
-      this._slideIndex = this._sliderItems.length
+      this._slideIndex = this._sliderItems.length - 1
     }
 
     this._sliderItems[this._slideIndex].style.display = 'block'
   }
 
   init() {
-    try {
+    if (this._sliderWrapper) {
       this._controlNextList.forEach((item) => {
         item.addEventListener('click', (evt) => {
           evt.preventDefault()
@@ -50,8 +49,6 @@ export default class AbstractSlider {
           this._showSlide()
         })
       })
-    } catch (err) {
-      console.warn("Can't implement AbstractSlider on this page")
     }
   }
 }

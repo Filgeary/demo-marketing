@@ -6,15 +6,13 @@ export default class DropdownMenu {
    * @param {string} controlNext Control to Next item selector
    */
   constructor(wrapper, menuItem, controlNext) {
-    try {
-      this._wrapper = document.querySelector(wrapper)
+    this._wrapper = document.querySelector(wrapper)
+
+    if (this._wrapper) {
       this._itemList = this._wrapper.querySelectorAll(menuItem)
       this._controlNext = this._wrapper.querySelector(controlNext)
-    } catch (err) {
-      console.warn("Can't implement DropdownMenu on this page")
+      this._itemIndex = 0
     }
-
-    this._itemIndex = 0
   }
 
   _hideItems() {
@@ -45,11 +43,9 @@ export default class DropdownMenu {
   }
 
   init() {
-    try {
+    if (this._wrapper) {
       this._hideItems()
       this._setOnClickShowItem()
-    } catch (err) {
-      console.warn("Can't implement DropdownMenu on this page")
     }
   }
 }

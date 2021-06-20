@@ -15,32 +15,35 @@ export default class MiniSlider extends AbstractSlider {
     wrapper,
     controlNext,
     controlPrev,
-    activeClass,
+    activeClass = '',
     isAutoplay = false,
   }) {
     super({ wrapper, controlNext })
 
-    try {
+    if (this._sliderItems) {
       this._sliderItems = this._sliderItems.filter((item) => {
         return item.tagName !== 'BUTTON'
       })
       this._controlPrevList = document.querySelectorAll(controlPrev)
-      this._activeClass = activeClass.replace(/^\./, '')
+      this._activeClass = activeClass ? activeClass.replace(/^\./, '') : ''
       this._isAutoplay = isAutoplay
-    } catch (err) {
-      console.warn("Can't implement MiniSlider on this page")
     }
   }
 
   _showSlide(next) {
     this._sliderItems.forEach((item) => {
       item.classList.remove(
-        this._activeClass,
         'animate__animated',
         'animate__fadeIn',
         'animate__fast',
       )
     })
+
+    if (this._activeClass) {
+      this._sliderItems.forEach((item) => {
+        item.classList.remove(this._activeClass)
+      })
+    }
 
     if (next) {
       this._sliderWrapper.appendChild(this._sliderItems[this._slideIndex])
@@ -67,11 +70,14 @@ export default class MiniSlider extends AbstractSlider {
     }
 
     this._sliderItems[this._slideIndex].classList.add(
-      this._activeClass,
       'animate__animated',
       'animate__fadeIn',
       'animate__fast',
     )
+
+    if (this._activeClass) {
+      this._sliderItems[this._slideIndex].classList.add(this._activeClass)
+    }
   }
 
   _setOnClickShowSlide() {
@@ -92,7 +98,7 @@ export default class MiniSlider extends AbstractSlider {
   }
 
   init() {
-    try {
+    if (this._sliderItems) {
       this._sliderWrapper.style.cssText = `
       display: flex;
       flex-wrap: wrap;
@@ -106,8 +112,6 @@ export default class MiniSlider extends AbstractSlider {
           this._showSlide(true)
         }, 5000)
       }
-    } catch (err) {
-      console.warn("Can't implement MiniSlider on this page")
     }
   }
 }

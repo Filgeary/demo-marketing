@@ -8,9 +8,12 @@ export default class VideoPlayer {
    */
   constructor(wrapper, playerCont, buttonClose, control) {
     this._wrapper = document.querySelector(wrapper)
-    this._playerCont = this._wrapper.querySelector(playerCont)
-    this._buttonClose = this._wrapper.querySelector(buttonClose)
-    this._controlList = document.querySelectorAll(control)
+
+    if (this._wrapper) {
+      this._playerCont = this._wrapper.querySelector(playerCont)
+      this._buttonClose = this._wrapper.querySelector(buttonClose)
+      this._controlList = document.querySelectorAll(control)
+    }
   }
 
   // This function creates an <iframe> (and YouTube player)
@@ -71,15 +74,17 @@ export default class VideoPlayer {
   }
 
   init() {
-    // This code loads the IFrame Player API code asynchronously.
-    const tag = document.createElement('script')
-    tag.src = 'https://www.youtube.com/iframe_api'
+    if (this._wrapper) {
+      // This code loads the IFrame Player API code asynchronously.
+      const tag = document.createElement('script')
+      tag.src = 'https://www.youtube.com/iframe_api'
 
-    const firstScriptTag = document.getElementsByTagName('script')[0]
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+      const firstScriptTag = document.getElementsByTagName('script')[0]
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
 
-    this._setOnClickPlayVideo()
-    this._setOnClickModalClose()
-    this._setOnKeydownModalClose()
+      this._setOnClickPlayVideo()
+      this._setOnClickModalClose()
+      this._setOnKeydownModalClose()
+    }
   }
 }

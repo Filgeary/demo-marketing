@@ -14,7 +14,10 @@ export default class MainSlider extends AbstractSlider {
     super({ wrapper, controlNext })
 
     this._controlToHomeList = document.querySelectorAll(controlToHome)
-    this._modal = document.querySelector(modal)
+
+    if (this._controlToHomeList.length > 0) {
+      this._modal = document.querySelector(modal)
+    }
   }
 
   _removeSlides() {
@@ -63,15 +66,17 @@ export default class MainSlider extends AbstractSlider {
   }
 
   init() {
-    super.init()
+    if (this._sliderWrapper && this._controlToHomeList.length > 0) {
+      super.init()
 
-    this._controlToHomeList.forEach((item) => {
-      item.addEventListener('click', (evt) => {
-        evt.preventDefault()
+      this._controlToHomeList.forEach((item) => {
+        item.addEventListener('click', (evt) => {
+          evt.preventDefault()
 
-        this._slideIndex = 0
-        this._showSlide()
+          this._slideIndex = 0
+          this._showSlide()
+        })
       })
-    })
+    }
   }
 }
