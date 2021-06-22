@@ -13,6 +13,8 @@ export default class VideoPlayer {
       this._playerCont = this._wrapper.querySelector(playerCont)
       this._buttonClose = this._wrapper.querySelector(buttonClose)
       this._controlList = document.querySelectorAll(control)
+
+      this._setOnClickModalClose = this._setOnClickModalClose.bind(this)
     }
   }
 
@@ -41,8 +43,8 @@ export default class VideoPlayer {
         ) {
           this._wrapper.style.display = 'flex'
         } else {
-          const urlPath = item.getAttribute('data-url')
-          this._createPlayer(urlPath)
+          this._urlPath = item.getAttribute('data-url')
+          this._createPlayer(this._urlPath)
         }
       })
     })
@@ -74,7 +76,7 @@ export default class VideoPlayer {
   }
 
   init() {
-    if (this._wrapper) {
+    if (this._wrapper && this._controlList.length > 0) {
       // This code loads the IFrame Player API code asynchronously.
       const tag = document.createElement('script')
       tag.src = 'https://www.youtube.com/iframe_api'

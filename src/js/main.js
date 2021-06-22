@@ -7,7 +7,8 @@ import { checkInputTel } from './utils/checkInputTel'
 import MainSlider from './modules/slider/mainSlider'
 import MiniSlider from './modules/slider/miniSlider'
 import PageModulesMiniSlider from './modules/slider/pageModulesMiniSlider'
-import VideoPlayer from './modules/videoPlayer'
+import VideoPlayer from './modules/videoPlayer/videoPlayer'
+import DoubleVideoPlayer from './modules/videoPlayer/doubleVideoPlayer'
 import DropdownMenu from './modules/dropdownMenu'
 import Form from './modules/form'
 
@@ -59,7 +60,12 @@ window.addEventListener('DOMContentLoaded', () => {
   })
   feedSlider.init()
 
-  const videoPlayer = new VideoPlayer('.overlay', '#frame', '.close', '.play')
+  const videoPlayer = new VideoPlayer(
+    '.overlay',
+    '#frame',
+    '.close',
+    '.showup__video .play',
+  )
   videoPlayer.init()
 
   const officeroldDropdownMenu = new DropdownMenu(
@@ -94,4 +100,14 @@ window.addEventListener('DOMContentLoaded', () => {
     controlPrev: '.prevmodule',
   })
   pageModulesMiniSlider.init()
+
+  const doubleVideoPlayer = new DoubleVideoPlayer(
+    '.overlay',
+    '#frame',
+    '.close',
+    '.module__video-item .play',
+    '.module__video',
+    '.module__video-item',
+  )
+  doubleVideoPlayer.init()
 })
