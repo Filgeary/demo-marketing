@@ -11,6 +11,7 @@ import VideoPlayer from './modules/videoPlayer/videoPlayer'
 import DoubleVideoPlayer from './modules/videoPlayer/doubleVideoPlayer'
 import DropdownMenu from './modules/dropdownMenu'
 import Form from './modules/form'
+import MiniDropdown from './modules/miniDropdown'
 
 window.addEventListener('DOMContentLoaded', () => {
   // endpoints
@@ -110,4 +111,7 @@ window.addEventListener('DOMContentLoaded', () => {
     '.module__video-item',
   )
   doubleVideoPlayer.init()
+
+  const miniDropdown = new MiniDropdown('.moduleapp', '.plus')
+  miniDropdown.init()
 })
