@@ -558,7 +558,7 @@
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <g opacity="0.34" filter="url(#filter0_d)">
+                      <g opacity="0.34" filter="url(#filter0_d1)">
                         <path
                           d="M4.824 11.6716V7.37561H6.048C8.12 7.37561 9.156 6.85161 9.156 5.80361C9.156 4.79561 8.128 4.28361 6.072 4.26761C5.44 4.26761 4.86 4.29961 4.332 4.36361L4.116 0.619608C4.9 0.515608 5.764 0.463608 6.708 0.463608C8.772 0.463608 10.384 0.907609 11.544 1.79561C12.712 2.68361 13.296 3.89161 13.296 5.41961C13.296 6.75561 12.88 7.85161 12.048 8.70761C11.216 9.55561 10.008 10.1316 8.424 10.4356L8.34 11.6716H4.824ZM6.576 12.9436C7.232 12.9436 7.804 13.1876 8.292 13.6756C8.788 14.1636 9.036 14.7396 9.036 15.4036C9.036 16.0756 8.788 16.6636 8.292 17.1676C7.804 17.6636 7.232 17.9116 6.576 17.9116C5.904 17.9116 5.32 17.6676 4.824 17.1796C4.336 16.6836 4.092 16.0956 4.092 15.4156C4.092 14.7516 4.336 14.1756 4.824 13.6876C5.32 13.1916 5.904 12.9436 6.576 12.9436Z"
                           fill="#BEBEBE"
@@ -566,7 +566,7 @@
                       </g>
                       <defs>
                         <filter
-                          id="filter0_d"
+                          id="filter0_d1"
                           x="0.0917969"
                           y="0.463867"
                           width="17.204"
@@ -659,7 +659,7 @@
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <g opacity="0.34" filter="url(#filter0_d)">
+                      <g opacity="0.34" filter="url(#filter0_d2)">
                         <path
                           d="M4.824 11.6716V7.37561H6.048C8.12 7.37561 9.156 6.85161 9.156 5.80361C9.156 4.79561 8.128 4.28361 6.072 4.26761C5.44 4.26761 4.86 4.29961 4.332 4.36361L4.116 0.619608C4.9 0.515608 5.764 0.463608 6.708 0.463608C8.772 0.463608 10.384 0.907609 11.544 1.79561C12.712 2.68361 13.296 3.89161 13.296 5.41961C13.296 6.75561 12.88 7.85161 12.048 8.70761C11.216 9.55561 10.008 10.1316 8.424 10.4356L8.34 11.6716H4.824ZM6.576 12.9436C7.232 12.9436 7.804 13.1876 8.292 13.6756C8.788 14.1636 9.036 14.7396 9.036 15.4036C9.036 16.0756 8.788 16.6636 8.292 17.1676C7.804 17.6636 7.232 17.9116 6.576 17.9116C5.904 17.9116 5.32 17.6676 4.824 17.1796C4.336 16.6836 4.092 16.0956 4.092 15.4156C4.092 14.7516 4.336 14.1756 4.824 13.6876C5.32 13.1916 5.904 12.9436 6.576 12.9436Z"
                           fill="#BEBEBE"
@@ -667,7 +667,7 @@
                       </g>
                       <defs>
                         <filter
-                          id="filter0_d"
+                          id="filter0_d2"
                           x="0.0917969"
                           y="0.463867"
                           width="17.204"
@@ -1180,6 +1180,7 @@
                   <label for="name">My name is</label>
                   <input
                     name="name"
+                    id="name"
                     type="text"
                     placeholder="Your name"
                     required
@@ -1215,9 +1216,10 @@
               </div>
               <div class="form__block">
                 <div>
-                  <label for="name">And i am</label>
+                  <label for="position">And i am</label>
                   <input
                     name="position"
+                    id="position"
                     type="text"
                     placeholder="ex. Retail loan officer"
                   />
@@ -1252,7 +1254,7 @@
                   </svg>
                 </div>
                 <div>
-                  <label for="name">From</label>
+                  <label for="city">From</label>
                   <select name="city" id="city">
                     <option value="New-York">New-York</option>
                     <option value="London">London</option>
@@ -1317,9 +1319,10 @@
               </div>
               <div class="form__block">
                 <div>
-                  <label for="name">Hit me up here</label>
+                  <label for="email">Hit me up here</label>
                   <input
                     name="email"
+                    id="email"
                     type="email"
                     placeholder="Email"
                     required
@@ -1354,7 +1357,7 @@
                 </div>
 
                 <div>
-                  <label for="name">And here</label>
+                  <label for="phone">And here</label>
                   <input
                     name="phone"
                     type="tel"
@@ -1956,10 +1959,11 @@
             <div class="schedule__form-title">Select the time</div>
             <form class="form">
               <div class="form__item">
-                <label for="name">My name is</label>
+                <label for="name-2">My name is</label>
                 <input
                   name="name"
                   type="text"
+                  id="name-2"
                   placeholder="Your name"
                   required
                 />
@@ -1993,10 +1997,11 @@
               </div>
 
               <div class="form__item">
-                <label for="name">You can contact me here</label>
+                <label for="email-2">You can contact me here</label>
                 <input
                   name="email"
                   type="email"
+                  id="email-2"
                   placeholder="Your email"
                   required
                 />
@@ -2030,8 +2035,8 @@
               </div>
 
               <div class="form__item">
-                <label for="name">I want to meet you on</label>
-                <input name="date" type="date" placeholder="When?" />
+                <label for="date">I want to meet you on</label>
+                <input name="date" type="date" id="date" />
                 <svg
                   style="display: none"
                   class="icon"
