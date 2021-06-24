@@ -219,6 +219,7 @@ a:active {
 .msg {
   display: none;
   margin-top: 20px;
+  font-size: 16px;
 }
 
 .plus {
@@ -237,16 +238,16 @@ a:active {
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background: #9ec73d;
   border-radius: 100%;
 }
 
 .plus__content svg {
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
   top: 50%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
@@ -1952,6 +1953,7 @@ a:active {
   display: flex;
   justify-content: center;
   height: 60px;
+  cursor: pointer;
 }
 
 .module__info-book .download svg {
@@ -2093,7 +2095,9 @@ a:active {
   transform: none;
 }
 
-/* custom */
+/* Custom props */
+/* ================================================================== */
+
 input[type='date'] {
   padding-right: 20px !important;
 }
@@ -2155,4 +2159,8 @@ input[type='date']::-webkit-calendar-picker-indicator {
 }
 .moduleapp .sidecontrol .next {
   display: none;
+}
+.js-display-block-important {
+  display: block !important;
+  animation: fadeIn 800ms;
 }
