@@ -1953,6 +1953,7 @@ a:active {
   display: flex;
   justify-content: center;
   height: 60px;
+  cursor: pointer;
 }
 
 .module__info-book .download svg {

@@ -12,6 +12,7 @@ import DoubleVideoPlayer from './modules/videoPlayer/doubleVideoPlayer'
 import DropdownMenu from './modules/dropdownMenu'
 import Form from './modules/form'
 import MiniDropdown from './modules/miniDropdown'
+import DownloadFile from './modules/downloadFile'
 
 window.addEventListener('DOMContentLoaded', () => {
   // endpoints
@@ -114,4 +115,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const miniDropdown = new MiniDropdown('.moduleapp', '.plus')
   miniDropdown.init()
+
+  const downloadFile = new DownloadFile('.download', './assets/pdf/test.pdf')
+  downloadFile.init()
 })
