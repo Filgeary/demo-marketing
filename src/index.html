@@ -6,6 +6,26 @@
     <title>Marketing</title>
     <meta name="description" content="Marketing service" />
 
+    <!-- Preload critical assets -->
+    <link
+      rel="preload"
+      href="./assets/img/mainbg.jpg"
+      as="image"
+      type="image/jpg"
+    />
+    <link
+      rel="preload"
+      href="./assets/img/slide_1_m.jpg"
+      as="image"
+      type="image/jpg"
+    />
+    <link
+      rel="preload"
+      href="./assets/img/slide_2_m.jpg"
+      as="image"
+      type="image/jpg"
+    />
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -134,6 +154,7 @@
 
         <div class="showup__wrapper">
           <div class="showup__intro">
+            <h1 class="visually-hidden">Marketing</h1>
             <div class="title">bring<span>it</span>up</div>
             <div class="subtitle">
               We can give you an education that you need
@@ -165,7 +186,7 @@
             Modules To Evolve <br />
             Your Career
             <div>
-              <button type="button" class="showup__prev">
+              <button type="button" class="showup__prev" title="Prev">
                 <div class="play__content">
                   <svg
                     width="9"
@@ -182,7 +203,7 @@
                   </svg>
                 </div>
               </button>
-              <button type="button" class="showup__next">
+              <button type="button" class="showup__next" title="Next">
                 <div class="play__content">
                   <svg
                     width="9"
@@ -422,7 +443,9 @@
         <div class="menu">
           <div class="evolve hidden">bring<span>it:</span>up</div>
           <div class="menu__block">
-            <a class="btn menu__block-schedule"> schedule an appointment </a>
+            <a href="#" class="btn menu__block-schedule">
+              schedule an appointment
+            </a>
             <svg
               viewBox="0 0 22 22"
               fill="none"
@@ -738,7 +761,7 @@
         <div class="menu">
           <div class="evolve hidden">bring<span>it:</span>up</div>
           <div class="menu__block">
-            <a class="btn menu__block-schedule white">
+            <a href="#" class="btn menu__block-schedule white">
               schedule an appointment
             </a>
             <svg
@@ -813,7 +836,7 @@
             </div>
             <button class="btn">Get access</button>
             <div class="modules__info-btns">
-              <button type="button" class="slick-prev">
+              <button type="button" class="slick-prev" title="prev">
                 <div class="play__content">
                   <svg
                     width="9"
@@ -826,7 +849,7 @@
                   </svg>
                 </div>
               </button>
-              <button type="button" class="slick-next">
+              <button type="button" class="slick-next" title="next">
                 <div class="play__content">
                   <svg
                     width="9"
@@ -1108,7 +1131,7 @@
         <div class="menu">
           <div class="evolve hidden">show<span>up:</span>evolve</div>
           <div class="menu__block">
-            <a class="btn menu__block-schedule white">
+            <a href="#" class="btn menu__block-schedule white">
               schedule an appointment
             </a>
             <svg
@@ -1403,7 +1426,9 @@
         <div class="menu">
           <div class="evolve hidden">bring<span>it:</span>up</div>
           <div class="menu__block">
-            <a class="btn menu__block-schedule"> schedule an appointment </a>
+            <a href="#" class="btn menu__block-schedule">
+              schedule an appointment
+            </a>
             <svg
               viewBox="0 0 22 22"
               fill="none"
@@ -1761,7 +1786,7 @@
               nulla pariatur.
             </div>
           </div>
-          <button type="button" class="slick-prev">
+          <button type="button" class="slick-prev" title="prev">
             <div class="play__content">
               <svg
                 width="9"
@@ -1774,7 +1799,7 @@
               </svg>
             </div>
           </button>
-          <button type="button" class="slick-next">
+          <button type="button" class="slick-next" title="next">
             <div class="play__content">
               <svg
                 width="9"
@@ -1794,7 +1819,7 @@
         <div class="menu">
           <div class="evolve hidden">bring<span>it:</span>up</div>
           <div class="menu__block">
-            <a class="btn menu__block-schedule hidden">
+            <a href="#" class="btn menu__block-schedule hidden">
               schedule an appointment
             </a>
             <svg
@@ -1907,7 +1932,7 @@
                 <div class="contacts__mail">example@gmail.com</div>
                 <div class="contacts__phone">+1 555 9513944</div>
                 <div class="contacts__links">
-                  <a href="https://www.facebook.com/">
+                  <a href="https://www.facebook.com/" title="Facebook">
                     <svg
                       width="11"
                       height="20"
@@ -1922,7 +1947,7 @@
                       />
                     </svg>
                   </a>
-                  <a href="https://twitter.com">
+                  <a href="https://twitter.com" title="Twitter">
                     <svg
                       width="20"
                       height="17"
