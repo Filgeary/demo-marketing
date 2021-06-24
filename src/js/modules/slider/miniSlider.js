@@ -27,6 +27,7 @@ export default class MiniSlider extends AbstractSlider {
       this._controlPrevList = document.querySelectorAll(controlPrev)
       this._activeClass = activeClass ? activeClass.replace(/^\./, '') : ''
       this._isAutoplay = isAutoplay
+      this._animationId = null
     }
   }
 
@@ -97,6 +98,38 @@ export default class MiniSlider extends AbstractSlider {
     })
   }
 
+  _activateAnimation() {
+    this._animationId = setInterval(() => {
+      this._showSlide(true)
+    }, 5000)
+  }
+
+  _setOnMouseEnterStopAnimation() {
+    this._controlNextList.forEach((item) => {
+      item.addEventListener('mouseenter', () => {
+        clearInterval(this._animationId)
+      })
+    })
+    this._controlPrevList.forEach((item) => {
+      item.addEventListener('mouseenter', () => {
+        clearInterval(this._animationId)
+      })
+    })
+  }
+
+  _setOnMouseLeaveStartAnimation() {
+    this._controlNextList.forEach((item) => {
+      item.addEventListener('mouseleave', () => {
+        this._activateAnimation()
+      })
+    })
+    this._controlPrevList.forEach((item) => {
+      item.addEventListener('mouseleave', () => {
+        this._activateAnimation()
+      })
+    })
+  }
+
   init() {
     if (this._sliderItems) {
       this._sliderWrapper.style.cssText = `
@@ -108,9 +141,9 @@ export default class MiniSlider extends AbstractSlider {
       this._setOnClickShowSlide()
 
       if (this._isAutoplay) {
-        setInterval(() => {
-          this._showSlide(true)
-        }, 5000)
+        this._activateAnimation()
+        this._setOnMouseEnterStopAnimation()
+        this._setOnMouseLeaveStartAnimation()
       }
     }
   }
